@@ -69,27 +69,27 @@ else
 fi
 
 # If the above was successful
-if [ `ls $BUILD_PATH/DADDY36_ROM_*.zip 2>/dev/null | wc -l` != "0" ]
+if [ `ls $BUILD_PATH/DARKINFUSION_ROM_*.zip 2>/dev/null | wc -l` != "0" ]
 then
    BUILD_RESULT="Build successful"
 
     # Copy the device ROM.zip to root (and before doing this, remove old device builds but not the last one of them, adding an OLD_tag to it)
     echo -e "${bldblu}Copying ROM.zip to $ROOT_PATH ${txtrst}"
 
-    if [ `ls $ROOT_PATH/OLD_DADDY36_ROM_$DEVICE-*.zip 2>/dev/null | wc -l` != "0" ]
+    if [ `ls $ROOT_PATH/OLD_DARKINFUSION_ROM_$DEVICE-*.zip 2>/dev/null | wc -l` != "0" ]
     then
-    rm OLD_DADDY36_ROM_$DEVICE-*.zip
+    rm OLD_DARKINFUSION_ROM_$DEVICE-*.zip
     fi
 
-    if [ `ls $ROOT_PATH/DADDY36_ROM_$DEVICE-*.zip 2>/dev/null | wc -l` != "0" ]
+    if [ `ls $ROOT_PATH/DARKINFUSION_ROM_$DEVICE-*.zip 2>/dev/null | wc -l` != "0" ]
     then
     for file in DADDY36_ROM_$DEVICE-*.zip
     do
-        mv -f "${file}" "${file/DADDY36_ROM/OLD_DADDY36_ROM}"
+        mv -f "${file}" "${file/DARKINFUSION_ROM/OLD_DARKINFUSION_ROM}"
     done
     fi
 
-    cp $BUILD_PATH/DADDY36_ROM_*.zip $ROOT_PATH
+    cp $BUILD_PATH/DARKINFUSION_ROM_*.zip $ROOT_PATH
 
     # If the build failed
 else

@@ -41,7 +41,7 @@ echo -e "${bldblu}Setting up build environment ${txtrst}"
 
 # Setup ccache
 export USE_CCACHE=1
-export CCACHE_DIR="/home/daddy36/Android/ccache"
+export CCACHE_DIR="/home/daddy366/Android/ccache"
 /usr/bin/ccache -M 25G
 
 # Set the device
@@ -83,7 +83,7 @@ then
 
     if [ `ls $ROOT_PATH/DARKINFUSION_ROM_$DEVICE-*.zip 2>/dev/null | wc -l` != "0" ]
     then
-    for file in DADDY36_ROM_$DEVICE-*.zip
+    for file in DARKINFUSION_ROM_$DEVICE-*.zip
     do
         mv -f "${file}" "${file/DARKINFUSION_ROM/OLD_DARKINFUSION_ROM}"
     done
@@ -112,11 +112,4 @@ echo -e ${txtrst}
 
 BUILDTIME="Build time: $(echo $((${END}-${START})) | awk '{print int($1/60)" minutes and "int($1%60)" seconds"}')"
 
-#kill java if it's hanging on
-pkill java
 
-# Shutdown the system if required by the user
-if [ "$SHUTDOWN" == "off" ]
-then
-  qdbus org.kde.ksmserver /KSMServer logout 0 2 2
-fi

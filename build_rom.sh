@@ -42,7 +42,7 @@ echo -e "${bldblu}Setting up build environment ${txtrst}"
 # Setup ccache
 export USE_CCACHE=1
 export CCACHE_DIR="/home/daddy366/Android/ccache"
-/usr/bin/ccache -M 25G
+/usr/bin/ccache -M 50G
 
 # Set the device
 echo -e "Setting the device... ${txtrst}"
@@ -113,3 +113,4 @@ echo -e ${txtrst}
 BUILDTIME="Build time: $(echo $((${END}-${START})) | awk '{print int($1/60)" minutes and "int($1%60)" seconds"}')"
 
 
+export LC_ALL=C

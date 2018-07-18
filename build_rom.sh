@@ -112,5 +112,4 @@ echo -e ${txtrst}
 
 BUILDTIME="Build time: $(echo $((${END}-${START})) | awk '{print int($1/60)" minutes and "int($1%60)" seconds"}')"
 
-
 export LC_ALL=C
